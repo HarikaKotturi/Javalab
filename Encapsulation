@@ -1,0 +1,49 @@
+package java.com;
+
+public class bankacc {
+    private String accHolderName;
+    private double balance = 1500;
+
+    // Setter for account holder name
+    public void setAccHolderName(String name) {
+        this.accHolderName = name;
+    }
+
+    // Getter for account holder name
+    public String getAccHolderName() {
+        return accHolderName;
+    }
+
+    // Method for depositing money
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposit success");
+        } else {
+            System.out.println("Invalid deposit");
+        }
+    }
+
+    // Getter for balance
+    public double getBalance() {
+        return balance;
+    }
+
+    // Main method to test the class
+    public static void main(String[] args) {
+        bankacc ac = new bankacc();
+
+        ac.setAccHolderName("Kotturi Harika");
+        ac.deposit(500);
+        ac.deposit(-5);  // invalid deposit
+
+        System.out.println("Account holder: " + ac.getAccHolderName());
+        System.out.println("Balance: " + ac.getBalance());
+    }
+}
+
+OUTPUT:
+Deposit success
+Invalid deposit 
+Account holder: Kotturi Harika 
+Balance: 2000.0
